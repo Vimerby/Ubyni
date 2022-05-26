@@ -1,0 +1,41 @@
+.slider-news{
+
+    .slick-list{
+
+        // max-height: 400px;
+        @apply -mx-15 overflow-x-hidden;
+
+        .slick-track{
+            @apply flex;
+
+            .slick-slide {
+                @apply px-15;
+                
+             }
+      
+        }
+       
+    }
+
+    .slick-dots {
+        position: static;
+        margin: 30px 0;
+        padding: 5px 0;
+        
+            li {
+                margin: 0 0.25rem;
+            }
+        
+            button {
+                @apply block w-12 h-12 p-0 rounded-full bg-primary;
+        
+                
+                text-indent: -9999px;
+            }
+        
+            li.slick-active button {
+                @apply bg-secondary;
+            }
+    }
+    
+}

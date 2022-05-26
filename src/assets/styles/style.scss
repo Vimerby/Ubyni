@@ -1,0 +1,68 @@
+
+@tailwind base;
+
+@import '1-Fonts/fonts';
+@import '2-Elements/elements';
+@import '2-Elements/slick';
+
+html, body{
+    @apply font-default w-full h-full;
+}
+
+h2{
+    @apply font-default font-semibold leading-12 text-lg text-primary;
+}
+
+h3{
+    @apply font-default font-semibold leading-12 text-md mb-1 text-black;
+}
+
+p{
+    @apply mb-3;
+}
+
+.container{
+    @media screen and(max-width: 767px){
+        @apply px-20;
+    } 
+        
+    
+}
+
+// .news__inner{
+
+//     &:before{
+//         @apply content-[""] transition w-[2px] h-0 bg-primary absolute left-0 top-0;
+//     }
+
+// }
+// .active-animation{
+//     &:before{
+//         // transition: 2s;
+//       @apply transition-[height] duration-[2s];
+//     }
+// }
+
+.block-fixed{
+    @apply fixed top-0 left-0;
+}
+
+.item-center{
+    @apply absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2
+}
+
+.anim_time-line{
+    animation: moveLine 1s linear;
+}
+@keyframes moveLine{
+    0% {
+        bottom: 100%;
+    }
+    100% {
+        bottom: 0 ;
+    }
+}
+
+@tailwind components;
+@tailwind utilities;
+

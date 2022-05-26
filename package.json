@@ -1,0 +1,58 @@
+{
+  "name": "webpack",
+  "main": "index.js",
+  "author": "Hresa",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve",
+    "watch": "webpack --watch",
+    "build": "NODE_ENV=production webpack serve",
+    "build:dev": "webpack",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^18.0.4",
+    "@types/react-slick": "^0.23.8",
+    "@types/styled-components": "^5.1.25",
+    "autoprefixer": "^10.3.3",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.2.0",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^5.0.16",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.2.2",
+    "postcss": "^8.3.6",
+    "postcss-loader": "^6.1.1",
+    "postcss-preset-env": "^6.7.0",
+    "react-refresh": "^0.10.0",
+    "sass": "^1.38.2",
+    "sass-loader": "^12.1.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.5",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.1.0"
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 2.5%",
+    "IE 10"
+  ],
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^8.0.1",
+    "react-router-dom": "^6.3.0",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.5",
+    "tailwindcss": "^3.0.18"
+  }
+}

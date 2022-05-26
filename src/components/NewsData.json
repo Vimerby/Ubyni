@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "img": "news1",
+        "alt": "",
+        "title": "title 1",
+        "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic facilis optio fugiat deserunt officia mollitia facere possimus maxime nostrum animi!"
+    },
+
+    {
+        "id": 2,
+        "img": "news2",
+        "alt": "",
+        "title": "title 2",
+        "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic facilis optio fugiat deserunt officia mollitia facere possimus maxime nostrum animi!"
+    },
+    
+    {
+        "id": 3,
+        "img": "news3",
+        "alt": "",
+        "title": "title 3",
+        "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic facilis optio fugiat deserunt officia mollitia facere possimus maxime nostrum animi!"
+    },
+
+    {
+        "id": 4,
+        "img": "news4",
+        "alt": "",
+        "title": "title 4",
+        "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic facilis optio fugiat deserunt officia mollitia facere possimus maxime nostrum animi!"
+    },
+
+    {
+        "id": 5,
+        "img": "news5",
+        "alt": "",
+        "title": "title 5",
+        "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic facilis optio fugiat deserunt officia mollitia facere possimus maxime nostrum animi!"
+    },
+
+    {
+        "id": 6,
+        "img": "news6",
+        "alt": "",
+        "title": "title 6",
+        "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic facilis optio fugiat deserunt officia mollitia facere possimus maxime nostrum animi!"
+    },
+
+    {
+        "id": 7,
+        "img": "news1",
+        "alt": "",
+        "title": "title 7",
+        "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic facilis optio fugiat deserunt officia mollitia facere possimus maxime nostrum animi!"
+    },
+
+    {
+        "id": 8,
+        "img": "news2",
+        "alt": "",
+        "title": "title 8",
+        "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic facilis optio fugiat deserunt officia mollitia facere possimus maxime nostrum animi!"
+    }
+
+]
+
