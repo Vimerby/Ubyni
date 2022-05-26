@@ -1,29 +1,10 @@
-import React, {useRef, useState ,useLayoutEffect, useEffect} from 'react';
-import ReactDOM from 'react-dom';
-
+import React, {useRef, useEffect} from 'react';
 import {Button} from '../components/Button';
 import SlickSlider from '../components/carousel/Slick';
 import NewsData from '../components/NewsData.json';
 import { Img ,IconSvg } from '../components/Images';
-import {PostType} from '../components/carousel/Slick';
-// import { motion, useViewportScroll, useSpring, useTransform } from 'framer-motion';
 import Header from './../components/parts/header/Header';
 import  styled,{keyframes} from 'styled-components';
-
-// import { keyframes } from "styled-components";
-    // const options = { threshold: 0.5 };
-    // let prevScrollY = window.scrollY;
-    // let up, down;
-    // let flag = false;
-    // let set = 0;
-    // const windowInnerHeight = window.innerHeight
-    // const targetY = window.innerHeight * .8;
-    // let value =  windowInnerHeight - targetY
-    // let value2 = 0;
-    // const [item, setItem] = useState(null);
-    // const [Intersecting, setIntersecting] = useState(false);
-const querySell= (x:string) => document.querySelector(x);
-
 
 export const Home = () => {
 
@@ -41,35 +22,19 @@ export const Home = () => {
     let flag = true;
     
     useEffect(()=> {
-    
-     
-   
-        // else TIME_LINE.current.style.transition =  `bottom 5s linear`;
+
         if(flag){
             let parent_time_line_bounding = (PARENT_TIME_LINE.current.getBoundingClientRect());
-            // console.log(parent_time_line_bounding.top);
             let distance = stop_point_time_line - parent_time_line_bounding.top;
             let distance_round = Math.round(distance)
-            
-            // distanceToPoint = distance_round
-            // TIME_LINE.current.style.transition =  `bottom 5s linear`;
-        
-                TIME_LINE.current.style.transition =  `bottom 1s linear 1s`;
-                TIME_LINE.current.style.bottom =  `calc(100% - ${distance_round}px)`;
-                console.log(TIME_LINE.current.offsetHeight);
 
-              
-                    
+            TIME_LINE.current.style.transition =  `bottom 1s linear 1s`;
+            TIME_LINE.current.style.bottom =  `calc(100% - ${distance_round}px)`;
+            console.log(TIME_LINE.current.offsetHeight);
+            flag = false;
                 
-
-
-                flag = false;
-                
-                
-        }else{
-            
         }
-        console.log(flag);
+
         setTimeout(()=>{
             TimeLineButtonUp.current.style.opacity = '1'
             TimeLineButtonUp.current.style.transform = 'translateY(0)'
@@ -87,34 +52,18 @@ export const Home = () => {
         if(window.pageYOffset > window_Y_offset){
             if(parent_time_line_bounding.top < point_active_scroll) {
 
-
-                    if(parent_time_line_bounding.height !>= distance){
-                        TIME_LINE.current.style.bottom =  `calc(100% - ${distance_round}px)`;
-                        TIME_LINE.current.style.transition =  `transform .5s linear`;
-                    }else{
-                        TIME_LINE.current.style.bottom =  `0`
-                    }
-                    
-
+                if(parent_time_line_bounding.height !>= distance){
+                    TIME_LINE.current.style.bottom =  `calc(100% - ${distance_round}px)`;
+                    TIME_LINE.current.style.transition =  `transform .5s linear`;
+                }else TIME_LINE.current.style.bottom =  `0`
+                
             }
         } 
         if(window.pageYOffset < window_Y_offset){
             if(parent_time_line_bounding.top < point_active_scroll) {
-               
-                if(distance > parent_time_line_bounding.height){
-                    TIME_LINE.current.style.bottom =  `0`
-                }else{
-                    
-                    TIME_LINE.current.style.bottom =  `calc(100% - ${distance_round}px)`;
-                }
-                // TIME_LINE.current.style.bottom =  `calc(100% - ${distance_round}px)`;
-                    console.log('down');
-                
-                
-                
+                (distance > parent_time_line_bounding.height) ? TIME_LINE.current.style.bottom =  `0` : TIME_LINE.current.style.bottom =  `calc(100% - ${distance_round}px)`;
             }
         }
-        // TIME_LINE.current.style.transition = "1s linear";
         window_Y_offset = window.pageYOffset 
         distanceToPoint = distance_round
         
@@ -126,10 +75,6 @@ export const Home = () => {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }
-
-    
-
-
 
     return (
         <div>

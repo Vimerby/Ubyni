@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { renderTree } from '../../../index'
 export const setLocalStorLang = (language: string) => {
   localStorage.setItem("language", language);
   return {
