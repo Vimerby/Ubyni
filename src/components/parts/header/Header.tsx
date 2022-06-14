@@ -18,7 +18,7 @@ const Header:FC = () => {
 
 
     
-    const [height, setHeight] = useState(0);
+    const [height, setHeight] = useState(400);
     const [heightHome, setHeightHome] = useState(0);
     const [scrolY, setScrolY] = useState(100);
     useLayoutEffect(()=> {
@@ -38,17 +38,17 @@ const Header:FC = () => {
 
     const [trigger, setTrigger] = useState(false);
     const lang = useSelector((state: RootState) => state.languages.language)
-
+    // location.pathname == "/" ? {minHeight: heightHome + "px"} : {}
     return (
-        //  <div style={location.pathname == "/" ? {minHeight: heightHome + "px"}:{minHeight: 100 + "px"} } >
-        <div style={{height: "500px"} } >
+         <div style={{minHeight: "500px" }} >
+        {/* // <div className="min-h-[100px]" > */}
            
-                <div className={`${location.pathname == "/" && scrolY < (height - 200)? "bg-transparent":"bg-primary"} block-fixed w-full z-20`}>
+                <div className={`${location.pathname == "/" && scrolY < (height - 200)? "bg-transparent":"bg-primary"} block-fixed w-full z-20 left-0 top-0`}>
                     <div className="container flex justify-between items-center relative py-30 ">
                      <div  style={{}}  className="anim_time-line absolute bg-secondary w-[2px] top-0 bottom-0 left-0 z-30"></div>
                         <div className="flex">
                             <Hamburger onClick={()=>setTrigger(!trigger)}/>
-                            <Nav className ={`pl-50 flex items-center absolute top-[calc(100%+30px)] w-full mobile-laptop:h-[calc(100vh-100px)]  border z-50 bg-primary lg:static ${trigger ? "left-0 bg-red" : "-left-[100%]"}`}/>
+                            <Nav className ={`flex items-center absolute top-[calc(100%+30px)] w-full mobile-laptop:h-[calc(100vh-100px)]  border z-50 bg-primary lg:static ${trigger ? "left-0 bg-red" : "-left-[100%]"}`}/>
                         </div>
                         <div className={ location.pathname == "/" && scrolY < (height - 200)? "opacity-0" : "w-30 stroke-secondary fill-secondary item-center"}>
                             <IconSvg name="emblem"/>

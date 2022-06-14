@@ -46,3 +46,8 @@ export const Img ={
     church: require('../assets/images/church.jpg')
 
 }
+
+
+export const gif = {
+    preloader: require('../assets/images/spinner.gif'),
+}

@@ -1,13 +1,21 @@
 import React from 'react';
-import {Img} from '../components/Images'
-import Header from '../components/parts/header/Header'
+import {Img} from '../../Images'
+import Header from '../../parts/header/Header'
+// import { ProfileType } from './AboutContainer';
+import Preloader from './../../common/Preloader/Preloader';
+// type profileUserType ={
+//   profileUser:[]
+// }
+
 
 const About = () => {
+
   return (
     <div>
-       <Header/>
+       {/* <Header/> */}
       {/* <Header/> */}
       <main className='py-[155px]'>
+
       <section>
         <div className="container">
           <h2 className='mb-90 text-center'>About</h2>

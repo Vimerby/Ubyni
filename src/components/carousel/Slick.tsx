@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import NewsData from '../NewsData.json';
 import {Img} from '../Images';
-import {Card} from "../card/Card";
+import {Card} from "../Card/Card";
 import './Slick.scss'
 
 export type PostType ={

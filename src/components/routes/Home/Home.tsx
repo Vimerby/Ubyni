@@ -1,15 +1,29 @@
-import React, {useRef, useEffect} from 'react';
-import {Button} from '../components/Button';
-import SlickSlider from '../components/carousel/Slick';
-import NewsData from '../components/NewsData.json';
-import { Img ,IconSvg } from '../components/Images';
-import Header from './../components/parts/header/Header';
+import React, {useRef, useEffect, useState} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../../data/redux/store';
+import {getResponceData} from '../../../data/redux/slices/dataSlice';
+
+import {Button} from '../../Button';
+import SlickSlider from '../../Carousel/Slick';
+import NewsData from '../../NewsData.json';
+import { Img ,IconSvg } from '../../Images';
+import Header from '../../parts/header/Header';
 import  styled,{keyframes} from 'styled-components';
 
-export const Home = () => {
 
+
+export const Home = () => {
+    // let dataArray = useSelector((state:RootState) => state.items.items)     
+    // let dispatch = useDispatch();
+
+    // const [resData, setResDeta] = useState([])
+
+    // console.log("get",props.data)
 
     
+
+
+
 
     const PARENT_TIME_LINE = useRef(null);
     const TIME_LINE = useRef(null);
@@ -20,8 +34,13 @@ export const Home = () => {
     let set = 0;
     let distanceToPoint = 0;
     let flag = true;
-    
+    // console.log(props.createData());
     useEffect(()=> {
+     
+        // props.createData()
+       
+
+
 
         if(flag){
             let parent_time_line_bounding = (PARENT_TIME_LINE.current.getBoundingClientRect());
@@ -76,59 +95,37 @@ export const Home = () => {
         document.documentElement.scrollTop = 0;
     }
 
+    type objectData = {
+        id: number,
+        location: {
+            x:number,
+            y:number,
+            z:number
+        },
+        name: string
+    }
+
     return (
         <div>
-             <Header/>
+             {/* <Header/> */}
             {/* <Header/> */}
             <main  className='bg-white relative z-0'>
                 <div ref={PARENT_TIME_LINE} className=" relative container">
                     <div ref={TIME_LINE} className="absolute bg-primary w-[2px] top-0 bottom-[100%] left-0"><span ref={TimeLineButtonUp} onClick={()=>getUp()} className=' cursor-pointer absolute hover:bg-secondary transition duration-100 ease-linear  opacity-0 -bottom-50 translate-y-[100px] -right-[24px] w-[50px] h-[50px] bg-primary rounded-[5px]  before:absolute before:top-1/2 before:left-1/2 before:transform before:-translate-x-1/2 before:-translate-y-1/2 before:border-x-[8px] before:border-x-transparent before:border-b-[15px] before:border-b-white'></span> </div>
+                   
                     <section>
-                        <div className="container">
+                        
+                        <div className="container p-0 pl-50">
                         
                         <div className={`news__inner `}>
 
-                                <div className="pl-50 flex justify-between pt-50">
+                                <div className="flex justify-between pt-50">
                                     <h2>News</h2>
                                     <Button name="see more" className='font-roboto font-normal text-sm-1 leading-12 text-primary border-2 px-45 py-12 rounded-[5px]' onClick={()=> alert('Hello world') }/>
                                 </div>
                                 
                                 <div className="flex justify-between pt-30">
-                                    <div className="px-50 w-[40%] desktop:w-[35%] flex mobile-laptop:hidden min-w-[280px]">
-                                
-                                        <div key={lastItemNews[0].id} className="pb-30 border-b-2 border-b-secondary flex flex-col">
-                                            <div className="">
-                                                <img src={Img.News[lastItemNews[0].img as keyof typeof Img.News]} className="w-full h-full object-cover"  width={400} height={400} alt={lastItemNews[0].alt}/>
-                                            </div>
-                                            <div className="my-30 flex-1">
-                                                <h3 className='text-h4'>{lastItemNews[0].title}</h3>
-                                                <p className='font-default font-normal text-sm-xxx leading-12'>{lastItemNews[0].desc}</p>
-                                            </div>
-                                            <Button href="#" name='write more' className="bg-secondary py-12 px-30 rounded-[5px] ml-auto flex items-center font-roboto font-normal text-sm-xx leading-12">
-                                                <span className='stroke-black ml-2'><IconSvg name="arrow2"/></span>
-                                            </Button>
-                                        </div>
-                                        
-                                    </div>
-                                    <div className="slider-news relative w-full lg:w-[60%]  desktop:w-[65%] pl-50 lg:before:contant-[''] lg:before:w-[2px] lg:before:h-full lg:before:bg-primary lg:before:absolute lg:before:left-0 lg:after:contant-[''] after:h-[2px] after:min-w-[calc(100%-50px)] lg:after:min-w-full after:bg-primary after:absolute after:bottom-0 after:right-0">
-                                        <SlickSlider/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <div className="container">
-                        
-                        <div className={`news__inner `}>
-
-                                <div className="pl-50 flex justify-between pt-50">
-                                    <h2>News</h2>
-                                    <Button name="see more" className='font-roboto font-normal text-sm-1 leading-12 text-primary border-2 px-45 py-12 rounded-[5px]' onClick={()=> alert('Hello world') }/>
-                                </div>
-                                
-                                <div className="flex justify-between pt-30">
-                                    <div className="px-50 w-[40%] desktop:w-[35%] flex mobile-laptop:hidden min-w-[280px]">
+                                    <div className="pr-50 pl-0 w-[40%] desktop:w-[35%] flex mobile-laptop:hidden min-w-[280px]">
                                 
                                         <div key={lastItemNews[0].id} className="pb-30 border-b-2 border-b-secondary flex flex-col">
                                             <div className="">
@@ -174,30 +171,6 @@ export const Home = () => {
                             </div>
                         </div>
                     </section>
-
-                    <section className=''>
-                        <div className='container'>
-                            <div className="relative py-120">
-                                <div style={{ }}  className=" absolute bg-primary w-[2px] h-0 top-0 left-0"></div>
-
-                                <h2 className='pb-50 ml-50'>About</h2>
-                                <div className="flex ml-50">
-                                    <div className="w-1/2 pr-120 flex flex-col">
-                                        <div className="mb-30">
-                                            <p className='font-roboto text-md-x'>Ubini is a village in the Kamianka-Buzka District of Lviv Oblast (Ukraine). The population was 354 at the 2001 census. The body of local self-government is Ubynivska village council. Located in the valley of the Dumna years.</p>
-                                        </div>
-                                        <Button href="#" name='write more' className="bg-secondary py-12 px-30 rounded-[5px] flex items-center font-roboto font-normal self-start text-sm-xx leading-12">
-                                            <span className='stroke-black ml-2'><IconSvg name="arrow2"/></span>
-                                        </Button>
-                                    </div>
-                                    <div className="w-1/2">
-                                        <img src={Img.map} alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    
                 </div>
 
                 <section className='pb-120'>

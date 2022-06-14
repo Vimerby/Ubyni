@@ -114,11 +114,7 @@ module.exports = {
       665: '665px',
     },
 
-    minHeight: {
-      'auto': 'auto',
-      40: '40px',
-      50: '50px',
-    },
+
 
     boxShadow: { 
       // sm: '',
@@ -206,6 +202,12 @@ module.exports = {
         48: '48px',
         140: '140px',
         210: '210px',
+      },
+
+      minHeight: {
+        'auto': 'auto',
+        40: '40px',
+        50: '50px',
       },
 
       boxShadow: {

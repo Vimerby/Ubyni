@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from '../components/parts/header/Header';
-import NewsData from '../components/NewsData.json';
-import { Card } from '../components/card/Card';
-import {PostType} from '../components/carousel/Slick';
-import { Img } from '../components/Images';
+import Header from '../parts/header/Header';
+import NewsData from '../NewsData.json';
+import { Card } from '../Card/Card';
+import {PostType} from '../Carousel/Slick';
+import { Img } from '../Images';
 
 const News = () => {
 
